@@ -20,7 +20,7 @@ Server side source files are located in the project root and in directories `pro
 
 The main framework included in client side logic is [Angular](https://angularjs.org/). [JQuery](https://jquery.com/) and [Bootstrap](http://getbootstrap.com/) are also used, but only via a CDN.
 
-### How to used
+### How to use
 
 You can test this software in <http://simplechat5000.herokuapp.com/>.
 
