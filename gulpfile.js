@@ -16,6 +16,8 @@ var b = watchify(browserify(opts));
 
 gulp.task('default', ['js', 'sass:watch']);
 
+gulp.task('build', ['sass', ])
+
 gulp.task('js', bundle);
 
 // Compile styles. SCSS is used.
