@@ -19,3 +19,20 @@ Server side source files are located in the project root and in directories `pro
 ### Client side
 
 The main framework included in client side logic is [Angular](https://angularjs.org/). [JQuery](https://jquery.com/) and [Bootstrap](http://getbootstrap.com/) are also used, but only via a CDN.
+
+### How to used
+
+You can test this software in <http://simplechat5000.herokuapp.com/>.
+
+First you choose nickname. After that, you have to join a channel. If the channel does not exist, it will be added. There are no lists of channels, so you have to tell the channel name for everyone you'd like to talk to.
+
+### Ideas for improvement
+
+The following list contains ideas for improvement. Can also be used as an unofficial TODO-list.
+
+* There can now be multiple users with the same nickname. Might be a good idea to have restriction on this.
+* The main UI needs overall improvement. Perhaps change Angular to something else even.
+* List all existing channels on server. At this moment channels are "hidden". (Basically the same as in IRC).
+* List all connected users (and their channels).
+* Emit a message to channels when a user disconnects.
+* List all users by channel.
