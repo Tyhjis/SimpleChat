@@ -8,7 +8,7 @@ Gulp is used for building client side components.
 
 Technologies also include [Browserify](http://browserify.org/) with [Watchify](https://github.com/substack/watchify) plugin. [SASS](http://sass-lang.com/) is used for styling.
 
-To build the software. Run `npm install` and then `gulp`. This builds both `js` and `scss` files. Minifying and uglifying are not done at this point.
+To build the software. Run `npm install` and then `gulp` if you have it installed globally. If you don't, then run `node ./node_modules/.bin/gulp`. This builds both `js` and `scss` files. Minifying and uglifying are not done at this point. 
 
 ## Project structure
 
