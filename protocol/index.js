@@ -1,5 +1,6 @@
 'use strict';
 var _io;
+var Message = require('./util.js').Message;
 
 /*
 * Registered nicknames are kept here on the server. This might become a memory problem.
@@ -33,7 +34,7 @@ function onMessage(socket) {
         let temp = new Message(msg.msg.trim(), msg.channel, registeredNicknames[socket.id]);
         _io.to(msg.channel).emit('clientmessage', temp);
       } catch(error) {
-        //TODO: Handle error.
+        _io.to(socket.id).emit('messageerror', 'An error occurred in sending message.');
       }
     }
   }
@@ -71,21 +72,6 @@ function informChannel(socket, text, channel) {
   let username = registeredNicknames[socket.id];
   let message = new Message(text, channel.name, username);
   _io.to(channel.name).emit('clientmessage', message);
-}
-
-/**
-* Helper function for constructing messages.
-* @constructor
-* @param {string} text - The actual text message.
-* @param {string} channel - The channel name where the message is sent.
-* @param {string} user - The user nickname who is sending the message. User has to be found in the list of users.
-*/
-function Message(text, channel, user) {
-  return {
-    msg: text,
-    channel: channel,
-    user: user
-  };
 }
 
 function onDisconnect(socket) {
