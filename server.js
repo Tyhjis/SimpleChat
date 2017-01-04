@@ -7,6 +7,7 @@ var http = require('http').createServer(app);
 var io = require('socket.io')(http);
 var protocolConfig = require('./protocol');
 
+// Set protocol for IO.
 protocolConfig(io);
 
 app.use(express.static(path.join(__dirname, 'public')));
@@ -16,3 +17,5 @@ app.use('/', routes);
 http.listen(config.port, () => {
   console.log(`Listening on port ${config.port}.`);
 });
+
+module.exports = http;
